@@ -28,7 +28,6 @@ root.render(
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <h1>Oh Hi world</h1>
           <App />
         </ThemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
