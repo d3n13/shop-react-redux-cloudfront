@@ -1,3 +1,7 @@
+# Task 2.3.1
+
+Store Link: [d1hip2isccotrp.cloudfront.net](https://d1hip2isccotrp.cloudfront.net/)
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
