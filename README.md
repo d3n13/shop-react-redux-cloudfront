@@ -1,3 +1,9 @@
+# Task 2.3.1
+
+Cloudfront: [d1hip2isccotrp.cloudfront.net](https://d1hip2isccotrp.cloudfront.net/)<br />
+S3 Bucket: [myshop-245d-fg-g3425.s3.eu-west-2.amazonaws.com](https://myshop-245d-fg-g3425.s3.eu-west-2.amazonaws.com)<br />
+S3 Website: [myshop-245d-fg-g3425.s3-website.eu-west-2.amazonaws.com](http://myshop-245d-fg-g3425.s3-website.eu-west-2.amazonaws.com)
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
