@@ -1,15 +1,12 @@
 import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
 import { formatJSONResponse } from "@libs/api-gateway";
-import { productsStorage } from "@libs/products-storage";
 import { middyfy } from "@libs/lambda";
 import { StatusCode } from "@libs/errors";
+import { getProductsList } from "./getProductsList";
 
-const getProductsList: ValidatedEventAPIGatewayProxyEvent<void> = async (
-  event
-) => {
+const handler: ValidatedEventAPIGatewayProxyEvent<void> = async (event) => {
   try {
-    const { getAll } = productsStorage;
-    const products = await getAll();
+    const products = await getProductsList();
 
     return formatJSONResponse({ products });
   } catch (e) {
@@ -17,4 +14,4 @@ const getProductsList: ValidatedEventAPIGatewayProxyEvent<void> = async (
   }
 };
 
-export const main = middyfy(getProductsList);
+export const main = middyfy(handler);
