@@ -6,5 +6,8 @@ export const mockedData = Array(20)
     return {
       id,
       name: `Product ${id}`,
+      description: `Product Description ${id}`,
+      price: 100 + index,
+      title: `Product Title ${id}`,
     };
   });
