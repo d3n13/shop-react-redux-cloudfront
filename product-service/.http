@@ -1,4 +1,0 @@
-POST https://mrhuth8q01.execute-api.eu-west-2.amazonaws.com/dev/hello
-content-type: application/json
-
-{"name": "Mickey"}
