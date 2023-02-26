@@ -36,7 +36,7 @@ function getCORSHeaders(origin: string) {
 }
 
 export function formatJSONResponse(
-  response: Record<string, unknown>,
+  response: unknown,
   origin: string,
   statusCode = 200
 ) {
