@@ -8,9 +8,13 @@ const handler: ValidatedEventAPIGatewayProxyEvent<void> = async (event) => {
   try {
     const products = await getProductsList();
 
-    return formatJSONResponse({ products });
+    return formatJSONResponse({ products }, event.headers.origin);
   } catch (e) {
-    return formatJSONResponse({ message: e.message }, StatusCode.ServerError);
+    return formatJSONResponse(
+      { message: e.message },
+      event.headers.origin,
+      StatusCode.ServerError
+    );
   }
 };
 

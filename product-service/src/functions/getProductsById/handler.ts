@@ -11,16 +11,21 @@ export const handler: ValidatedEventAPIGatewayProxyEvent<void> = async (
     const productId = parseInt(event.pathParameters.productId);
     const product = await getProductsById(productId);
 
-    return formatJSONResponse({ product });
+    return formatJSONResponse({ product }, event.headers.origin);
   } catch (e) {
     if (e instanceof NotFoundError) {
       return formatJSONResponse(
         { message: e.message },
+        event.headers.origin,
         StatusCode.NotFoundError
       );
     }
 
-    return formatJSONResponse({ message: e.message }, StatusCode.ServerError);
+    return formatJSONResponse(
+      { message: e.message },
+      event.headers.origin,
+      StatusCode.ServerError
+    );
   }
 };
 
