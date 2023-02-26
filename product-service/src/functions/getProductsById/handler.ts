@@ -11,7 +11,7 @@ export const handler: ValidatedEventAPIGatewayProxyEvent<void> = async (
     const productId = parseInt(event.pathParameters.productId);
     const product = await getProductsById(productId);
 
-    return formatJSONResponse({ product }, event.headers.origin);
+    return formatJSONResponse(product, event.headers.origin);
   } catch (e) {
     if (e instanceof NotFoundError) {
       return formatJSONResponse(
