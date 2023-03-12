@@ -28,7 +28,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       method: "GET",
       url,
       params: {
-        name: encodeURIComponent(file.name),
+        name: encodeURIComponent(file?.name ?? ""),
       },
     });
 
@@ -37,7 +37,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
       body: file,
     });
 
-    setFile("");
+    setFile(undefined);
   };
   return (
     <Box>
